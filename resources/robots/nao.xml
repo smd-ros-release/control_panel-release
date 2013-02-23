@@ -1,0 +1,8 @@
+<robot>
+  <robotName>NAO</robotName>
+  <system>Humanoid</system>
+  <driveSystem>Bipedal</driveSystem>
+  <imageFile>nao.jpg</imageFile>
+  <nameSpace>nao</nameSpace>
+
+</robot>

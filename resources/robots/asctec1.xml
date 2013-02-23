@@ -1,0 +1,25 @@
+<robot>
+  <robotName>Asctec 1</robotName>
+  <system>UAV</system>
+  <driveSystem>Quadrotor</driveSystem>
+  <imageFile>asctec.jpg</imageFile>
+  <nameSpace>asctec1</nameSpace>
+
+  <sensors>
+    <imu>
+      <name>IMU</name>
+      <topicName>imu/data</topicName>
+      <roll />
+      <pitch />
+      <yaw />
+      <angularVelocity />
+      <linearAcceleration />
+    </imu>
+  </sensors>
+
+  <controls>
+    <drive>
+      <topicName>cmd_vel</topicName>
+    </drive>
+  </controls>
+</robot>

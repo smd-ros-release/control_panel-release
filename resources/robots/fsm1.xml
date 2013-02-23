@@ -1,0 +1,48 @@
+<robot>
+  <robotName>FSM 1</robotName>
+  <system>UAV</system>
+  <driveSystem>Quadrotor</driveSystem>
+  <imageFile>fsm.jpg</imageFile>
+  <nameSpace>fsm1</nameSpace>
+
+  <sensors>
+    <imu>
+      <name>Imu</name>
+      <topicName>imu/data</topicName>
+      <roll />
+      <pitch />
+      <yaw />
+      <angularVelocity />
+      <linearAcceleration />
+    </imu>
+  </sensors>
+
+  <controls>
+    <drive>
+      <topicName>cmd_vel</topicName>
+    </drive>
+  </controls>
+
+  <commands>
+    <takeoff>
+      <topicName>takeoff</topicName>
+    </takeoff>
+    <land>
+      <topicName>land</topicName>
+    </land>
+    <custom>
+      <name>Reset</name>
+      <topicName>reset</topicName>
+    </custom>
+  </commands>
+
+  <diagnostics>
+    <topicName>/diagnostics</topicName>
+
+    <batteryLevel>
+      <name>Battery Level</name>
+      <max>100</max>
+    </batteryLevel>
+  </diagnostics>
+
+</robot>

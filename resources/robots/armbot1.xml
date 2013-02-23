@@ -1,0 +1,13 @@
+<robot>
+  <robotName>Armbot 1</robotName>
+  <system>UGV</system>
+  <driveSystem>2-Wheeled Differential Drive</driveSystem>
+  <imageFile>armbot.jpg</imageFile>
+  <nameSpace>armbot1</nameSpace>
+
+  <controls>
+    <drive>
+      <topicName>cmd_vel</topicName>
+    </drive>
+  </controls>
+</robot>

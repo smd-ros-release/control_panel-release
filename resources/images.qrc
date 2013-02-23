@@ -1,0 +1,36 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>images/status_lights/status_light_blue.png</file>
+        <file>images/status_lights/status_light_green.png</file>
+        <file>images/status_lights/status_light_grey.png</file>
+        <file>images/status_lights/status_light_orange.png</file>
+        <file>images/status_lights/status_light_red.png</file>
+        <file>images/status_lights/status_light_yellow.png</file>
+        <file>images/status_lights/status_light_cover.png</file>
+        <file>images/heading_indicator/robot.png</file>
+        <file>images/heading_indicator/heading_indicator.png</file>
+        <file>images/heading_indicator/compass_background.png</file>
+        <file>images/heading_indicator/compass_indicator.png</file>
+        <file>images/heading_indicator/compass_cover.png</file>
+        <file>images/attitude_indicator/attitude_indicator.png</file>
+        <file>images/attitude_indicator/artificial_horizon.png</file>
+        <file>images/attitude_indicator/crosshair.png</file>
+        <file>images/battery/battery_background.png</file>
+        <file>images/battery/battery.png</file>
+
+        <file>images/nao.jpg</file>
+        <file>images/smp.jpg</file>
+        <file>images/asctec.jpg</file>
+        <file>images/ghetto_bot.jpg</file>
+        <file>images/unknown.jpg</file>
+        <file>images/ardrone.jpg</file>
+        <file>images/fsm.jpg</file>
+        <file>images/pr2.png</file>
+        <file>images/turtlebot.png</file>
+        <file>images/erratic.png</file>
+        <file>images/little_boy.jpg</file>
+        <file>images/fat_man.jpg</file>
+        <file>images/brady_bot.jpg</file>
+        <file>images/armbot.jpg</file>
+    </qresource>
+</RCC>

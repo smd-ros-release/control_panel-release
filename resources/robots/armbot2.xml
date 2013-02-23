@@ -1,0 +1,70 @@
+<robot>
+  <robotName>Armbot 2</robotName>
+  <system>UGV</system>
+  <driveSystem>2-Wheeled Differential Drive</driveSystem>
+  <imageFile>:/images/armbot.jpg</imageFile>
+  <nameSpace>armbot2</nameSpace>
+  <sensors>
+    <laser>
+      <name>Sonar Scan</name>
+      <topicName>base_scan</topicName>
+    </laser>
+    <imu>
+      <name>Fused IMU</name>
+      <topicName>imu/fused</topicName>
+      <roll/>
+      <pitch/>
+      <yaw/>
+      <linearAcceleration/>
+      <hideAttitude/>
+      <hideHeading/>
+    </imu>
+  </sensors>
+  <joints>
+    <topicName>joint_states</topicName>
+    <position/>
+    <velocity/>
+    <joint>
+      <name>base_to_left_wheel</name>
+      <displayName>Left Wheel</displayName>
+    </joint>
+    <joint>
+      <name>base_to_right_wheel</name>
+      <displayName>Right Wheel</displayName>
+    </joint>
+    <joint>
+      <name>shoulder_to_neck1</name>
+      <displayName>Head</displayName>
+    </joint>
+  </joints>
+  <processedData>
+    <map>
+      <name>GMapping</name>
+      <topicName>map</topicName>
+    </map>
+    <odometry>
+      <name>Raw Encoder</name>
+      <topicName>odom</topicName>
+      <position/>
+      <orientation/>
+      <linearVelocity/>
+      <angularVelocity/>
+      <hideAttitude/>
+      <hideHeading/>
+    </odometry>
+    <pose>
+      <name>EKF Pose</name>
+      <topicName>robot_pose_ekf/odom_combined</topicName>
+      <position/>
+      <orientation/>
+      <isStamped/>
+      <hasCovariance/>
+      <updateMap/>
+    </pose>
+  </processedData>
+  <controls>
+    <drive>
+      <topicName>cmd_vel</topicName>
+    </drive>
+  </controls>
+</robot>

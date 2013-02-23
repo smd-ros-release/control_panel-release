@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>robots/armbot1.xml</file>
+        <file>robots/armbot2.xml</file>
+        <file>robots/ardrone1.xml</file>
+        <file>robots/ardrone2.xml</file>
+        <file>robots/ardrone3.xml</file>
+        <!-- file>robots/asctec1.xml</file>
+        <file>robots/erratic.xml</file>
+        <file>robots/fat_man.xml</file>
+        <file>robots/fsm1.xml</file>
+        <file>robots/ghetto_bot1.xml</file -->
+        <file>robots/little_boy.xml</file>
+        <!-- file>robots/nao.xml</file>
+        <file>robots/brady_bot.xml</file -->
+        <file>robots/pr2.xml</file>
+        <file>robots/smp1.xml</file>
+        <file>robots/smp2.xml</file>
+        <file>robots/test_robot.xml</file>
+        <!-- file>robots/turtlebot.xml</file -->
+        <file>robots/imu_comparison.xml</file>
+    </qresource>
+</RCC>

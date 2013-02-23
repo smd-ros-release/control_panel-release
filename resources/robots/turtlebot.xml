@@ -1,0 +1,78 @@
+<robot>
+  <robotName>TurtleBot</robotName>
+  <system>UGV</system>
+  <driveSystem>Differential drive</driveSystem>
+  <imageFile>turtlebot.png</imageFile>
+  <nameSpace></nameSpace>
+
+  <sensors>
+    <camera>
+      <name>Kinect Color Video</name>
+      <topicName>camera/rgb/image_color</topicName>
+    </camera>
+    <camera>
+      <name>Kinect Monochrome Video</name>
+      <topicName>camera/rgb/image_mono</topicName>
+    </camera>
+    <camera>
+      <name>Kinect Depth Video</name>
+      <topicName>camera/depth/image</topicName>
+    </camera>
+
+    <laser>
+      <name>Kinect Laser Scan</name>
+      <topicName>scan</topicName>
+    </laser>
+    <laser>
+      <name>Narrow Scan</name>
+      <topicName>narrow_scan</topicName>
+    </laser>
+  </sensors>
+
+  <processedData>
+    <odometry>
+      <name>Odometry</name>
+      <topicName>odom</topicName>
+      <position />
+      <orientation />
+      <linearVelocity />
+      <angularVelocity />
+    </odometry>
+    <disparityImage>
+      <name>Kinect Disparity</name>
+      <topicName>camera/depth/disparity</topicName>
+    </disparityImage>
+    <map>
+      <name>Map</name>
+      <topicName>map</topicName>
+    </map>
+  </processedData>
+
+  <joints>
+    <topicName>joint_states</topicName>
+    <position />
+    <velocity />
+    <joint>
+      <name>left_wheel_joint</name>
+      <displayName>Left Wheel</displayName>
+    </joint>
+    <joint>
+      <name>right_wheel_joint</name>
+      <displayName>Right Wheel</displayName>
+    </joint>
+    <joint>
+      <name>front_castor_joint</name>
+      <displayName>Front Castor</displayName>
+    </joint>
+    <joint>
+      <name>back_castor_joint</name>
+      <displayName>Rear Castor</displayName>
+    </joint>
+  </joints>
+
+  <controls>
+    <drive>
+      <topicName>cmd_vel</topicName>
+    </drive>
+  </controls>
+</robot>
