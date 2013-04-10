@@ -102,12 +102,6 @@ RobotTab::RobotTab(RobotConfig *new_robot_config, QWidget *parent) :
     if(node_manager->diagnostic_node && !robot_config->diagnostics.batteryLevel.empty())
 		connect(node_manager->diagnostic_node, SIGNAL(diagnosticDataReceived(const QString &, const QString &)),
 			this, SLOT(processDiagnostic(const QString &, const QString &)));
-    if(node_manager->range_node)
-    {
-        data_pane->showRangeLabel(true);
-        connect(node_manager->range_node, SIGNAL(rangeReceived(float, bool)),
-            data_pane, SLOT(updateRange(float)));
-    }
     if(!robot_config->diagnostics.batteryLevel.empty())
         data_pane->showBatteryDisplay(true);
 
@@ -538,5 +532,12 @@ void RobotTab::setupDataPane()
                 data_pane->addGpsDisplay(robot_config->sensors.gps[i].name, robot_config->sensors.gps[i].latitude,
                     robot_config->sensors.gps[i].longitude, robot_config->sensors.gps[i].altitude),
                 SLOT(updateGpsDisplay(double, double, double)));
+    }
+
+    if( robot_config->sensors.range.size( ) > 0 )
+    {
+        connect(node_manager->addRangeNode(robot_config->sensors.range[0].topicName.toStdString()), SIGNAL(rangeReceived(float, bool)),
+            data_pane, SLOT(updateRange(float)));
+        data_pane->showRangeLabel(true);
     }
 }
