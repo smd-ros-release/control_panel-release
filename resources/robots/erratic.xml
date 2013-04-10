@@ -1,0 +1,57 @@
+<robot>
+  <robotName>Erratic</robotName>
+  <system>UGV</system>
+  <driveSystem></driveSystem>
+  <imageFile>erratic.png</imageFile>
+  <nameSpace></nameSpace>
+
+  <sensors>
+    <laser>
+      <name>Base Scan</name>
+      <topicName>base_scan/scan</topicName>
+    </laser>
+  </sensors>
+
+  <processedData>
+    <map>
+      <name>Map</name>
+      <topicName>map</topicName>
+    </map>
+    <odometry>
+      <name>Odometry</name>
+      <topicName>odom</topicName>
+      <position />
+      <orientation />
+      <linearVelocity />
+      <angularVelocity />
+    </odometry>
+  </processedData>
+
+  <joints>
+    <topicName>joint_states</topicName>
+    <position />
+    <velocity />
+    <joint>
+      <name>base_caster_support_joint</name>
+      <displayName>Caster Supporter</displayName>
+    </joint>
+    <joint>
+      <name>caster_wheel_joint</name>
+      <displayName>Caster Wheel</displayName>
+    </joint>
+    <joint>
+      <name>base_link_left_wheel_joint</name>
+      <displayName>Left Wheel</displayName>
+    </joint>
+    <joint>
+      <name>base_link_right_wheel_joint</name>
+      <displayName>Right Wheel</displayName>
+    </joint>
+  </joints>
+
+  <controls>
+    <drive>
+      <topicName>cmd_vel</topicName>
+    </drive>
+  </controls>
+</robot>

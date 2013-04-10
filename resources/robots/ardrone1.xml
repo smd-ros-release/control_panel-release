@@ -1,0 +1,70 @@
+<robot>
+  <robotName>AR.Drone 1</robotName>
+  <system>UAV</system>
+  <driveSystem>Quadrotor</driveSystem>
+  <imageFile>ardrone.jpg</imageFile>
+  <nameSpace>ardrone1</nameSpace>
+
+  <sensors>
+    <camera>
+      <name>Color Camera</name>
+      <topicName>image_raw</topicName>
+    </camera>
+    <imu>
+      <name>IMU</name>
+      <topicName>imu/data</topicName>
+      <roll/>
+      <pitch/>
+      <yaw/>
+      <angularVelocity/>
+      <linearAcceleration/>
+    </imu>
+    <range>
+      <name>Height</name>
+      <topicName>sonar</topicName>
+    </range>
+  </sensors>
+
+  <controls>
+    <drive>
+      <topicName>cmd_vel</topicName>
+    </drive>
+  </controls>
+
+  <commands>
+    <takeoff>
+      <topicName>takeoff</topicName>
+    </takeoff>
+    <land>
+      <topicName>land</topicName>
+    </land>
+    <custom>
+      <name>Reset</name>
+      <topicName>reset</topicName>
+    </custom>
+    <custom>
+      <name>Camera Toggle</name>
+      <topicName>togglecam</topicName>
+    </custom>
+    <custom>
+      <name>Flatten Trim</name>
+      <topicName>flat_trim</topicName>
+    </custom>
+  </commands>
+
+  <diagnostics>
+    <topicName>/diagnostics</topicName>
+
+    <batteryLevel>
+      <name>Battery Level</name>
+      <max>100.0</max>
+    </batteryLevel>
+    <voltage>
+      <name>Battery Voltage</name>
+      <minRange>10.0</minRange>
+      <maxRange>13.0</minRange>
+      <operatingVoltage>11.1</operatingVoltage>
+    </voltage>
+  </diagnostics>
+
+</robot>

@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="control_panel" type="control_panel"
+   name="control_panel" output="screen"/>
+
+</launch>

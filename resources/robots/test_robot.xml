@@ -1,0 +1,86 @@
+<robot>
+  <robotName>UGV Test Robot</robotName>
+  <system>Testing</system>
+  <driveSystem></driveSystem>
+  <imageFile></imageFile>
+  <nameSpace></nameSpace>
+
+  <sensors>
+    <camera>
+      <name>Color Video</name>
+      <topicName>camera/image_raw</topicName>
+    </camera>
+
+    <camera>
+      <name>Kinect Color Video</name>
+      <topicName>camera/rgb/image_color</topicName>
+    </camera>
+
+    <camera>
+      <name>Kinect Monochrome Video</name>
+      <topicName>camera/rgb/image_mono</topicName>
+    </camera>
+
+    <camera>
+      <name>Kinect Depth Feed</name>
+      <topicName>camera/depth/image</topicName>
+    </camera>
+
+    <camera>
+      <name>Kinect IR Stream</name>
+      <topicName>camera/ir/image_rect</topicName>
+    </camera>
+
+    <laser>
+      <name>Laser Scan</name>
+      <topicName>scan</topicName>
+    </laser>
+
+    <laser>
+      <name>Laser Base Scan</name>
+      <topicName>base_scan</topicName>
+    </laser>
+
+    <imu>
+      <name>IMU</name>
+      <topicName>imu/data</topicName>
+      <roll />
+      <pitch />
+      <yaw />
+      <angularVelocity />
+      <linearAcceleration />
+    </imu>
+  </sensors>
+
+  <processedData>
+    <disparityImage>
+      <name>Kinect Depth Registered Disparity</name>
+      <topicName>camera/depth_registered/disparity</topicName>
+    </disparityImage>
+    <disparityImage>
+      <name>Kinect Depth Disparity</name>
+      <topicName>camera/depth/disparity</topicName>
+    </disparityImage>
+    <map>
+      <name>GMapping Map</name>
+      <topicName>map</topicName>
+    </map>
+    <odometry>
+      <name>Odometry</name>
+      <topicName>odom</topicName>
+      <position />
+      <orientation />
+      <linearVelocity />
+      <angularVelocity />
+    </odometry>
+  </processedData>
+
+  <commands>
+  </commands>
+
+  <controls>
+    <drive>
+      <topicName>cmd_vel</topicName>
+    </drive>
+  </controls>
+</robot>

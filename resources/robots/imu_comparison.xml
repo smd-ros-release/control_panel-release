@@ -1,0 +1,32 @@
+<robot>
+  <robotName>IMU Comparison</robotName>
+  <system>None</system>
+  <driveSystem>None</driveSystem>
+  <nameSpace></nameSpace>
+
+  <sensors>
+    <imu>
+      <name>Raw IMU</name>
+      <topicName>imu/raw</topicName>
+      <roll/>
+      <pitch/>
+      <yaw/>
+      <angularVelocity/>
+      <linearAcceleration/>
+    </imu>
+    <imu>
+      <name>Filtered IMU</name>
+      <topicName>imu/filtered</topicName>
+      <roll/>
+      <pitch/>
+      <yaw/>
+      <angularVelocity/>
+      <linearAcceleration/>
+    </imu>
+  </sensors>
+
+  <diagnostics>
+    <topicName>/diagnostics</topicName>
+  </diagnostics>
+
+</robot>

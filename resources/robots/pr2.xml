@@ -1,0 +1,363 @@
+<robot>
+  <robotName>PR2</robotName>
+  <system>UGV</system>
+  <driveSystem>Differential drive with holonomic wheels</driveSystem>
+  <imageFile>pr2.png</imageFile>
+  <nameSpace></nameSpace>
+
+  <sensors>
+    <camera>
+      <name>Prosilica Camera</name>
+      <topicName>prosilica/image_raw</topicName>
+    </camera>
+
+    <camera>
+      <name>Left Forearm Color</name>
+      <topicName>l_forearm_cam/image_color</topicName>
+    </camera>
+    <camera>
+      <name>Left Forearm Monochrome</name>
+      <topicName>l_forearm_cam/image_mono</topicName>
+    </camera>
+    <camera>
+      <name>Right Forearm Color</name>
+      <topicName>r_forearm_cam/image_color</topicName>
+    </camera>
+    <camera>
+      <name>Right Forearm Monochrome</name>
+      <topicName>r_forearm_cam/image_mono</topicName>
+    </camera>
+
+    <camera>
+      <name>Narrow Stereo Left Camera</name>
+      <topicName>narrow_stereo/left/image_raw</topicName>
+    </camera>
+    <camera>
+      <name>Narrow Stereo Right Camera</name>
+      <topicName>narrow_stereo/right/image_raw</topicName>
+    </camera>
+
+    <camera>
+      <name>Narrow Stereo Textured Left Camera</name>
+      <topicName>narrow_stereo_textured/left/image_raw</topicName>
+    </camera>
+    <camera>
+      <name>Narrow Stereo Textured Right Camera</name>
+      <topicName>narrow_stereo_textured/right/image_raw</topicName>
+    </camera>
+
+    <camera>
+      <name>Wide Stereo Left Color</name>
+      <topicName>wide_stereo/left/image_color</topicName>
+    </camera>
+    <camera>
+      <name>Wide Stereo Left Monochrome</name>
+      <topicName>wide_stereo/left/image_mono</topicName>
+    </camera>
+    <camera>
+      <name>Wide Stereo Right Color</name>
+      <topicName>wide_stereo/right/image_color</topicName>
+    </camera>
+    <camera>
+      <name>Wide Stereo Right Monochrome</name>
+      <topicName>wide_stereo/right/image_mono</topicName>
+    </camera>
+
+    <laser>
+      <name>Tilt Scan</name>
+      <topicName>tilt_scan</topicName>
+    </laser>
+
+    <laser>
+      <name>Base Scan</name>
+      <topicName>base_scan</topicName>
+    </laser>
+
+    <imu>
+      <name>Torso Lift IMU</name>
+      <topicName>torso_lift_imu/data</topicName>
+      <roll />
+      <pitch />
+      <yaw />
+      <angularVelocity />
+      <linearAcceleration />
+      <hideAttitude />
+      <hideHeading />
+    </imu>
+  </sensors>
+
+  <processedData>
+    <image>
+      <name>Left Forearm Rectified</name>
+      <topicName>l_forearm_cam/image_rect</topicName>
+    </image>
+    <image>
+      <name>Left Forearm Rectified Color</name>
+      <topicName>l_forearm_cam/image_rect_color</topicName>
+    </image>
+
+    <image>
+      <name>Right Forearm Rectified</name>
+      <topicName>r_forearm_cam/image_rect</topicName>
+    </image>
+    <image>
+      <name>Right Forearm Rectified Color</name>
+      <topicName>r_forearm_cam/image_rect_color</topicName>
+    </image>
+
+    <image>
+      <name>Narrow Stereo Textured Right Rectified</name>
+      <topicName>narrow_stereo_textured/right/image_rect</topicName>
+    </image>
+    <image>
+      <name>Narrow Stereo Textured Left Rectified</name>
+      <topicName>narrow_stereo_textured/left/image_rect</topicName>
+    </image>
+    <disparityImage>
+      <name>Narrow Stereo Textured Disparity</name>
+      <topicName>narrow_stereo_textured/disparity</topicName>
+    </disparityImage>
+
+    <image>
+      <name>Narrow Stereo Right Rectified</name>
+      <topicName>narrow_stereo/right/image_rect</topicName>
+    </image>
+    <image>
+      <name>Narrow Stereo Left Rectified</name>
+      <topicName>narrow_stereo/left/image_rect</topicName>
+    </image>
+    <disparityImage>
+      <name>Narrow Stereo Disparity</name>
+      <topicName>narrow_stereo/disparity</topicName>
+    </disparityImage>
+
+
+    <image>
+      <name>Wide Stereo Right Rectified</name>
+      <topicName>wide_stereo/right/image_rect</topicName>
+    </image>
+    <image>
+      <name>Wide Stereo Right Rect Color</name>
+      <topicName>wide_stereo/right/image_rect_color</topicName>
+    </image>
+    <image>
+      <name>Wide Stereo Left Rectified</name>
+      <topicName>wide_stereo/left/image_rect</topicName>
+    </image>
+    <image>
+      <name>Wide Stereo Left Rect Color</name>
+      <topicName>wide_stereo/left/image_rect_color</topicName>
+    </image>
+    <disparityImage>
+      <name>Wide Stereo Disparity</name>
+      <topicName>wide_stereo/disparity</topicName>
+    </disparityImage>
+
+    <map>
+      <name>GMapping</name>
+      <topicName>map</topicName>
+    </map>
+
+    <odometry>
+      <name>Base Odometry</name>
+      <topicName>base_odometry/odom</topicName>
+      <position />
+      <orientation />
+      <linearVelocity />
+      <angularVelocity />
+    </odometry>
+  </processedData>
+
+  <joints>
+    <topicName>joint_states</topicName>
+    <position />
+    <velocity />
+    <!-- effort / -->
+    <joint>
+      <name>fl_caster_rotation_joint</name>
+      <displayName>FL Caster Rotation</displayName>
+    </joint>
+    <joint>
+      <name>fl_caster_l_wheel_joint</name>
+      <displayName>FL Caster L Wheel</displayName>
+    </joint>
+    <joint>
+      <name>fl_caster_r_wheel_joint</name>
+      <displayName>FL Caster R Wheel</displayName>
+    </joint>
+    <joint>
+      <name>fr_caster_rotation_joint</name>
+      <displayName>FR Caster Rotation</displayName>
+    </joint>
+    <joint>
+      <name>fr_caster_l_wheel_joint</name>
+      <displayName>FR Caster L Wheel</displayName>
+    </joint>
+    <joint>
+      <name>fr_caster_r_wheel_joint</name>
+      <displayName>FR Caster R Wheel</displayName>
+    </joint>
+    <joint>
+      <name>bl_caster_rotation_joint</name>
+      <displayName>BL Caster Rotation</displayName>
+    </joint>
+    <joint>
+      <name>bl_caster_l_wheel_joint</name>
+      <displayName>BL Caster L Wheel</displayName>
+    </joint>
+    <joint>
+      <name>bl_caster_r_wheel_joint</name>
+      <displayName>BL Caster R Wheel</displayName>
+    </joint>
+    <joint>
+      <name>br_caster_rotation_joint</name>
+      <displayName>BR Caster Rotation</displayName>
+    </joint>
+    <joint>
+      <name>br_caster_l_wheel_joint</name>
+      <displayName>BR Caster L Wheel</displayName>
+    </joint>
+    <joint>
+      <name>br_caster_r_wheel_joint</name>
+      <displayName>BR Caster R Wheel</displayName>
+    </joint>
+    <joint>
+      <name>torso_lift_joint</name>
+      <displayName>Torso Lift</displayName>
+    </joint>
+    <joint>
+      <name>torso_lift_motor_screw_joint</name>
+      <displayName>Torso Lift Motor Screw</displayName>
+    </joint>
+    <joint>
+      <name>head_pan_joint</name>
+      <displayName>Head Pan</displayName>
+    </joint>
+    <joint>
+      <name>head_tilt_joint</name>
+      <displayName>Head Tilt</displayName>
+    </joint>
+    <joint>
+      <name>laser_tilt_mount_joint</name>
+      <displayName>Laser Tilt Mount</displayName>
+    </joint>
+    <joint>
+      <name>r_upper_arm_roll_joint</name>
+      <displayName>R Upper Arm Roll</displayName>
+    </joint>
+    <joint>
+      <name>r_shoulder_pan_joint</name>
+      <displayName>R Shoulder Pan</displayName>
+    </joint>
+    <joint>
+      <name>r_shoulder_lift_joint</name>
+      <displayName>R Shoulder Lift</displayName>
+    </joint>
+    <joint>
+      <name>r_forearm_roll_joint</name>
+      <displayName>R Forearm Roll</displayName>
+    </joint>
+    <joint>
+      <name>r_elbow_flex_joint</name>
+      <displayName>R Elbow Flex</displayName>
+    </joint>
+    <joint>
+      <name>r_wrist_flex_joint</name>
+      <displayName>R Wrist Flex</displayName>
+    </joint>
+    <joint>
+      <name>r_wrist_roll_joint</name>
+      <displayName>R Wrist Roll</displayName>
+    </joint>
+    <joint>
+      <name>r_gripper_joint</name>
+      <displayName>R Gripper</displayName>
+    </joint>
+    <joint>
+      <name>r_gripper_l_finger_joint</name>
+      <displayName>R Gripper L Finger</displayName>
+    </joint>
+    <joint>
+      <name>r_gripper_r_finger_joint</name>
+      <displayName>R Gripper R Finger</displayName>
+    </joint>
+    <joint>
+      <name>r_gripper_r_finger_tip_joint</name>
+      <displayName>R Gripper R Fingertip</displayName>
+    </joint>
+    <joint>
+      <name>r_gripper_l_finger_tip_joint</name>
+      <displayName>R Gripper L Fingertip</displayName>
+    </joint>
+    <joint>
+      <name>r_gripper_motor_screw_joint</name>
+      <displayName>R Gripper Motor Screw</displayName>
+    </joint>
+    <joint>
+      <name>r_gripper_motor_slider_joint</name>
+      <displayName>R Gripper Motor Slider</displayName>
+    </joint>
+    <joint>
+      <name>l_upper_arm_roll_joint</name>
+      <displayName>L Upper Arm Roll</displayName>
+    </joint>
+    <joint>
+      <name>l_shoulder_pan_joint</name>
+      <displayName>L Shoulder Pan</displayName>
+    </joint>
+    <joint>
+      <name>l_shoulder_lift_joint</name>
+      <displayName>L Shoulder Lift</displayName>
+    </joint>
+    <joint>
+      <name>l_forearm_roll_joint</name>
+      <displayName>L Forearm Roll</displayName>
+    </joint>
+    <joint>
+      <name>l_elbow_flex_joint</name>
+      <displayName>L Elbow Flex</displayName>
+    </joint>
+    <joint>
+      <name>l_wrist_flex_joint</name>
+      <displayName>L Wrist Flex</displayName>
+    </joint>
+    <joint>
+      <name>l_wrist_roll_joint</name>
+      <displayName>L Wrist Roll</displayName>
+    </joint>
+    <joint>
+      <name>l_gripper_joint</name>
+      <displayName>L Gripper</displayName>
+    </joint>
+    <joint>
+      <name>l_gripper_l_finger_joint</name>
+      <displayName>L Gripper L Finger</displayName>
+    </joint>
+    <joint>
+      <name>l_gripper_r_finger_joint</name>
+      <displayName>L Gripper R Finger</displayName>
+    </joint>
+    <joint>
+      <name>l_gripper_r_finger_tip_joint</name>
+      <displayName>L Gripper R Fingertip</displayName>
+    </joint>
+    <joint>
+      <name>l_gripper_l_finger_tip_joint</name>
+      <displayName>L Gripper L Fingertip</displayName>
+    </joint>
+    <joint>
+      <name>l_gripper_motor_screw_joint</name>
+      <displayName>L Gripper Motor Screw</displayName>
+    </joint>
+    <joint>
+      <name>l_gripper_motor_slider_joint</name>
+      <displayName>L Gripper Motor Slider</displayName>
+    </joint>
+  </joints>
+
+  <controls>
+    <drive>
+      <topicName>base_controller/command</topicName>
+    </drive>
+  </controls>
+</robot>

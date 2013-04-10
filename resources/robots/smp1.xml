@@ -1,0 +1,32 @@
+<robot>
+  <robotName>SMP 1</robotName>
+  <system>UGV</system>
+  <driveSystem>4 Wheel Skid-steer</driveSystem>
+  <imageFile>smp.jpg</imageFile>
+  <nameSpace>smp1</nameSpace>
+
+  <sensors>
+    <camera>
+      <name>Color Video</name>
+      <topicName>rgb/image_color</topicName>
+    </camera>
+    <camera>
+      <name>Greyscale Video</name>
+      <topicName>rgb/image_mono</topicName>
+    </camera>
+    <camera>
+      <name>Depth Image</name>
+      <topicName>depth/image_raw</topicName>
+    </camera>
+    <laser>
+      <name>LiDAR Scan</name>
+      <topicName>scan</topicName>
+    </laser>
+  </sensors>
+
+  <controls>
+    <drive>
+      <topicName>cmd_vel</topicName>
+    </drive>
+  </controls>
+</robot>

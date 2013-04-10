@@ -1,0 +1,41 @@
+<robot>
+  <robotName>Little Boy</robotName>
+  <system>UGV</system>
+  <driveSystem>6 Wheels, 4-Wheeled Differential Drive</driveSystem>
+  <imageFile>little_boy.jpg</imageFile>
+  <nameSpace>little_boy</nameSpace>
+
+  <sensors>
+    <camera>
+      <name>Kinect Color Video</name>
+      <topicName>rgb/image_color</topicName>
+    </camera>
+    <camera>
+      <name>Kinect Monochrome Video</name>
+      <topicName>rgb/image_mono</topicName>
+    </camera>
+    <camera>
+      <name>Kinect Depth Video</name>
+      <topicName>depth/image_raw</topicName>
+    </camera>
+    <camera>
+      <name>Kinect IR Video</name>
+      <topicName>ir/image_raw</topicName>
+    </camera>
+    <imu>
+      <name>IMU</name>
+      <topicName>imu/data</topicName>
+      <roll/>
+      <pitch/>
+      <yaw/>
+      <angularVelocity/>
+      <linearAcceleration/>
+    </imu>
+  </sensors>
+
+  <controls>
+    <drive>
+      <topicName>cmd_vel</topicName>
+    </drive>
+  </controls>
+</robot>

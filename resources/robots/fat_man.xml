@@ -1,0 +1,51 @@
+<robot>
+  <robotName>Fat Man</robotName>
+  <system>UGV</system>
+  <driveSystem>4-Wheeled Differential Drive</driveSystem>
+  <imageFile>fat_man.jpg</imageFile>
+  <nameSpace>fat_man</nameSpace>
+
+  <sensors>
+    <camera>
+      <name>Kinect Color Video</name>
+      <topicName>rgb/image_color</topicName>
+    </camera>
+    <camera>
+      <name>Kinect Monochrome Video</name>
+      <topicName>rgb/image_mono</topicName>
+    </camera>
+    <camera>
+      <name>Kinect Depth Video</name>
+      <topicName>depth/image_raw</topicName>
+    </camera>
+    <camera>
+      <name>Kinect IR Video</name>
+      <topicName>ir/image_raw</topicName>
+    </camera>
+    <laser>
+      <name>LiDAR</name>
+      <topicName>scan</topicName>
+    </laser>
+  </sensors>
+
+  <processedData>
+    <disparityImage>
+      <name>Kinect Disparity</name>
+      <topicName>depth/disparity</topicName>
+    </disparityImage>
+    <image>
+      <name>Rectified Color Video</name>
+      <topicName>rgb/image_rect_color</topicName>
+    </image>
+    <image>
+      <name>Rectified Monochrome Video</name>
+      <topicName>rgb/image_rect</topicName>
+    </image>
+  </processedData>
+
+  <controls>
+    <drive>
+      <topicName>cmd_vel</topicName>
+    </drive>
+  </controls>
+</robot>
