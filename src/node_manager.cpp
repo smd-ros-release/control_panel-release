@@ -85,8 +85,6 @@ NodeManager::NodeManager(struct RobotConfig *new_robot_config) :
 		joint_state_node = new JointStateNode(nh_ptr);
 	if(!robot_config->sensors.lasers.empty())
 		laser_node = new LaserNode(nh_ptr);
-	if(!robot_config->sensors.range.empty())
-		range_node = new RangeNode(nh_ptr);
 	/* TODO: Hack */
 	if(!strncmp(robot_config->robotName.toStdString().c_str(), "Armbot", 6))
 	{
@@ -317,18 +315,16 @@ PoseNode *NodeManager::addPoseNode(const std::string &topic, bool isStamped, boo
 	return pose_node;
 }
 
-/*
-RangeNode *NodeManager::addRangeNode()
+RangeNode *NodeManager::addRangeNode(const std::string &topic)
 {
     range_node = new RangeNode(nh_ptr);
+    range_node->setTopic(topic);
 
     // @todo
     // Store pointer.
 
     return range_node;
 }
-*/
-
 
 void NodeManager::joystickAxisChanged(int axis, double value)
 {
@@ -370,28 +366,56 @@ void NodeManager::joystickButtonChanged(int button, bool state)
 	if(connected && state)
 	{
 		// Joystick mapping here
-		if(button == 14)
+		if(button == 4)
+		{
+			// Flip Forward Message
+			for(unsigned int i = 0; i < robot_config->commands.custom.size(); i++)
+				if(robot_config->commands.custom[i].name == "Flip Forward")
+				    command_node->callEmpty(robot_config->commands.custom[i].topicName);
+		}
+		else if(button == 5)
+		{
+			// Flip Right Message
+			for(unsigned int i = 0; i < robot_config->commands.custom.size(); i++)
+				if(robot_config->commands.custom[i].name == "Flip Right")
+				    command_node->callEmpty(robot_config->commands.custom[i].topicName);
+		}
+		else if(button == 6)
+		{
+			// Flip Backward Message
+			for(unsigned int i = 0; i < robot_config->commands.custom.size(); i++)
+				if(robot_config->commands.custom[i].name == "Flip Backward")
+				    command_node->callEmpty(robot_config->commands.custom[i].topicName);
+		}
+		else if(button == 7)
+		{
+			// Flip Left Message
+			for(unsigned int i = 0; i < robot_config->commands.custom.size(); i++)
+				if(robot_config->commands.custom[i].name == "Flip Left")
+				    command_node->callEmpty(robot_config->commands.custom[i].topicName);
+		}
+		else if(button == 14)
 		{
 			// Takeoff Message
 			for(unsigned int i = 0; i < robot_config->commands.custom.size(); i++)
 				if(robot_config->commands.custom[i].name == "takeoff")
 				    command_node->callEmpty(robot_config->commands.custom[i].topicName);
 		}
-		if(button == 13)
+		else if(button == 13)
 		{
 			// Land Message
 			for(unsigned int i = 0; i < robot_config->commands.custom.size(); i++)
 				if(robot_config->commands.custom[i].name == "land")
 				    command_node->callEmpty(robot_config->commands.custom[i].topicName);
 		}
-		if(button == 12)
+		else if(button == 12)
 		{
 			// Reset Message
 			for(unsigned int i = 0; i < robot_config->commands.custom.size(); i++)
 				if(robot_config->commands.custom[i].name == "Reset")
 				    command_node->callEmpty(robot_config->commands.custom[i].topicName);
 		}
-		if(button == 15)
+		else if(button == 15)
 		{
 			// Land Message
 			for(unsigned int i = 0; i < robot_config->commands.custom.size(); i++)

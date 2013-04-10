@@ -79,6 +79,7 @@ class NodeManager : public QThread
 		ImuNode *addImuNode(const std::string &topic = Globals::DEFAULT_IMU_TOPIC);
 		OdometryNode *addOdometryNode(const std::string &topic = Globals::DEFAULT_ODOMETRY_TOPIC);
 		PoseNode *addPoseNode(const std::string &topic = Globals::DEFAULT_POSE_TOPIC, bool isStamped = false, bool hasCovariance = false);
+		RangeNode *addRangeNode(const std::string &topic = Globals::DEFAULT_RANGE_TOPIC);
 
 		// ROS Nodes
 		ImageNode *camera_node; // For raw images (e.g., camera/depth image feeds)
