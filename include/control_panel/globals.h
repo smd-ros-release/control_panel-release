@@ -66,7 +66,7 @@ const std::string DEFAULT_LASER_TOPIC      = "scan";
 const std::string DEFAULT_MAP_TOPIC        = "map";
 const std::string DEFAULT_ODOMETRY_TOPIC   = "odom";
 const std::string DEFAULT_POSE_TOPIC       = "robot_pose_ekf/odom_combined";
-const std::string DEFAULT_RANGE_TOPIC      = "sonar";
+const std::string DEFAULT_RANGE_TOPIC      = "range";
 
 
 // Connection status with a robot
